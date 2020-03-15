@@ -269,7 +269,7 @@ float aStar(Node2D& start,
   }
 
   // return large number to guide search away
-  return 1000;
+  return 1000000;
 }
 
 //###################################################
@@ -361,7 +361,10 @@ void updateH(Node3D& start, const Node3D& goal, Node2D* nodes2D, float* dubinsLo
     // create a 2d goal node
     Node2D goal2d(goal.getX(), goal.getY(), 0, 0, nullptr);
     // run 2d astar and return the cost of the cheapest path for that node
-    nodes2D[(int)start.getY() * width + (int)start.getX()].setG(aStar(goal2d, start2d, nodes2D, width, height, configurationSpace));
+    nodes2D[(int)start.getY() * width + (int)start.getX()].setG(
+      configurationSpace.getDistance(start2d.getX(),
+        start2d.getY(), goal2d.getX(), goal2d.getY())
+    );
   }
 
   if (Constants::twoD) {

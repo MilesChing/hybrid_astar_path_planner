@@ -75,7 +75,7 @@ class Node2D {
   /// Updates the cost-so-far for the node x' coming from its predecessor. It also discovers the node.
   void updateG() { g += movementCost(*pred); d = true; }
   /// Updates the cost-to-go for the node x' to the goal node.
-  void updateH(const Node2D& goal) { h = movementCost(goal) * 1.2; }
+  void updateH(const Node2D& goal) { h = movementCost(goal); }
   /// The heuristic as well as the cost measure.
   float movementCost(const Node2D& pred) const { return sqrt((x - pred.x) * (x - pred.x) + (y - pred.y) * (y - pred.y)); }
 

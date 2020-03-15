@@ -11,7 +11,7 @@ const int Node3D::dir = 3;
 //const float Node3D::dt[] = { 0,         0.10472,   -0.10472};
 
 // R = 6, 6.75 DEG
-const float fres = 10.f;
+const float fres = 5.f;
 const float Node3D::dy[] = { 0 * fres,        -0.0415893 * fres,  0.0415893 * fres};
 const float Node3D::dx[] = { 0.7068582 * fres,   0.705224 * fres,   0.705224 * fres};
 const float Node3D::dt[] = { 0,         0.1178097,   -0.1178097};

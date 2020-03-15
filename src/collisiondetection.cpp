@@ -4,7 +4,7 @@ using namespace HybridAStar;
 
 CollisionDetection::CollisionDetection()
 {
-
+  Lookup::collisionLookup(collisionLookup);
 }
 
 bool CollisionDetection::configurationTest(float x, float y, float t) {
