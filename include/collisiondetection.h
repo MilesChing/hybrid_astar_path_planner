@@ -52,10 +52,16 @@ class CollisionDetection {
     // assign values to the configuration
     getConfiguration(node, x, y, t);
 
+    Node2D tmp(x, y, 0, 0, 0);
+    tmp.setIdx(map.second.first);
+    if(x < map.second.first && x >= 0 && y < map.second.second && y >= 0)
+      return !map.first[tmp.getIdx()];
+    else return false;
+
     // 2D collision test
-    if (t == 99) {
-      return !map.first[node->getIdx()];
-    }
+    //if (t == 99) {
+
+    //}
 
     if (true) {
       cost = configurationTest(x, y, t) ? 0 : 1;

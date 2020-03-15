@@ -30,6 +30,5 @@ bool CollisionDetection::configurationTest(float x, float y, float t) {
       }
     }
   }
-
   return true;
 }

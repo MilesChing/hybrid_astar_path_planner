@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11 -Wall  -rdynamic CMakeFiles/test.dir/src/main.cpp.o CMakeFiles/test.dir/src/algorithm.cpp.o CMakeFiles/test.dir/src/dubins.cpp.o CMakeFiles/test.dir/src/node2d.cpp.o CMakeFiles/test.dir/src/node3d.cpp.o CMakeFiles/test.dir/src/collisiondetection.cpp.o  -o test -lompl 

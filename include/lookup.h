@@ -13,7 +13,7 @@ namespace Lookup {
 //###################################################
 inline void dubinsLookup(float* lookup) {
   bool DEBUG = false;
-  std::cout << "I am building the Dubin's lookup table...";
+  std::cout << "I am building the Dubin's lookup table..." << std::endl;
 
   DubinsPath path;
 
@@ -49,14 +49,6 @@ inline void dubinsLookup(float* lookup) {
           // calculate the actual cost
           dubins_init(start, goal, Constants::r, &path);
           lookup[X * headings * headings * width + Y * headings * headings + h0 * headings + h1] = dubins_path_length(&path);
-
-          if (DEBUG && lookup[X * headings * headings * width + Y * headings * headings + h0 * headings + h1] < sqrt(X * X + Y * Y) * 1.000001) {
-            std::cout << X << " | " << Y << " | "
-                      << Constants::deltaHeadingDeg* h0 << " | "
-                      << Constants::deltaHeadingDeg* h1 << " length: "
-                      << lookup[X * headings * headings * width + Y * headings * headings + h0 * headings + h1] << "\n";
-
-          }
         }
       }
     }
@@ -80,7 +72,7 @@ inline int sign(double x) {
 // COLLISION LOOKUP CREATION
 inline void collisionLookup(Constants::config* lookup) {
   bool DEBUG = false;
-  std::cout << "I am building the collision lookup table...";
+  std::cout << "I am building the collision lookup table..." << std::endl;
   // cell size
   const float cSize = Constants::cellSize;
   // bounding box size length/width

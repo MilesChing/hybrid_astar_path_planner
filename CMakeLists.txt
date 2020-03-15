@@ -20,6 +20,7 @@ set(SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/node3d.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/collisiondetection.cpp)
 
+find_package(OpenCV 3.3.0 EXACT)
 find_package(OMPL REQUIRED)
 
 if(NOT OMPL_FOUND)
@@ -27,4 +28,4 @@ if(NOT OMPL_FOUND)
 endif(NOT OMPL_FOUND)
 include_directories(include ${OMPL_INCLUDE_DIRS})
 add_executable(test ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp ${SOURCES})
-target_link_libraries(test ${OMPL_LIBRARIES})
+target_link_libraries(test ${OMPL_LIBRARIES} ${OpenCV_LIBS})
